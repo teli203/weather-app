@@ -49,3 +49,20 @@ body{
     font-size: 30px;
     font-weight: 100;
 }
+
+.place-container .country{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.current-info .others{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(24, 24, 27, 0.6);
+    padding: 20px;
+}
+
+.current-info .others .weather-item{
+    display: flex;
+    justify-content: space-between;
+}
