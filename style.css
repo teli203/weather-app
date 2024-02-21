@@ -110,6 +110,9 @@ body{
     align-items: center;
     justify-content: center;
     margin: 0 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .weather-forecast .weather-forecast-item .day{
@@ -117,4 +120,16 @@ body{
     background: #3c3c44;
     border-radius: 50px;
     text-align: center;
+}
+
+.weather-forecast .weather-forecast-item{
+    font-weight: 100;
+}
+
+@media only screen and (max-width:730px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
 }
