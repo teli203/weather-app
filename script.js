@@ -22,6 +22,6 @@ setInterval(() => {
 
     timeEl.innerHTML = hoursIn12HrFormat + ':' + minutes+ ' ' + `<span id="am-pm">${ampm}</span>`
 
-    dateEl.innerHTML = 
+    dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
 
 }, 1000);
