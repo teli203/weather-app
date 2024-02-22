@@ -10,6 +10,8 @@ const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
+const API_KEY ='094533805c4db4f536e9098a9a6d35cf';
+
 setInterval(() => {
     const time = new Date();
     const month = time.getMonth();
@@ -25,3 +27,20 @@ setInterval(() => {
     dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
 
 }, 1000);
+
+getWeatherData()
+function getWeatherData () {
+    navigator.geolocation.getCurrentPosition((success) => {
+        
+        let {latitude, longitude } = success.coords;
+
+        fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metricappid=${API_KEY}`).then(res => res.json()).then(data => {
+
+        console.log(data)
+        showWeatherData(data);
+        })
+    })
+}
+function showWeatherData (data){
+    let {humidity, pressure, sunrise, sunset, wind_speed} =data.current
+}
